@@ -168,6 +168,7 @@ SPA Web Applications - это проект, предназначенный дл�
 ### Загрузка фикстур
 
 Для загрузки фикстур в базу данных используйте команды:
+
       ```bash
       python manage.py loaddata users/fixtures/users.json
       python manage.py loaddata habits/fixtures/habits.json
