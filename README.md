@@ -97,6 +97,11 @@ SPA Web Applications - это проект, предназначенный дл�
 *    POST /habits/create-habit/ - Создание привычки.
 *    PUT /habits/update-habit/<int:pk>/ - Редактирование привычки.
 *    DELETE /habits/delete-habit/<int:pk>/ - Удаление привычки.
+*    POST /users/register/ - Регистрация
+*    POST /users/login/ - Авторизация
+*    POST /users/token/refresh/ - Обновление токена
+*    GET /swagger/ - API свагер
+*    GET /redoc/ - API редок
 
 ### Примеры запросов
 
