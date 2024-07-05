@@ -28,11 +28,12 @@ class UserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
 
-class Users(AbstractUser):
+class User(AbstractUser):
     username = None
 
     email = models.EmailField(max_length=100, unique=True, verbose_name='почта', help_text='введите почту')
-    tg_id = models.BigIntegerField(verbose_name='ID', unique=True, help_text='введите ID Telegram', **NULLABLE)
+    tg_id = models.BigIntegerField(verbose_name='ID Telegram', unique=True,
+                                   help_text='введите ID Telegram для оповещения', **NULLABLE)
     phone = models.CharField(max_length=150, verbose_name='телефон', help_text='введите телефон', **NULLABLE)
     city = models.CharField(max_length=150, verbose_name='город', help_text='введите город', **NULLABLE)
     avatar = models.ImageField(upload_to='users/avatars/%Y/%m/%d', verbose_name='аватар', help_text='загрузите аватар',
