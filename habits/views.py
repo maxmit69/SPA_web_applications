@@ -1,5 +1,4 @@
 from rest_framework import generics, permissions
-
 from habits.paginators import HabitPagination
 from habits.serializers import HabitSerializer
 from habits.models import Habit
@@ -12,7 +11,7 @@ class HabitListApiView(generics.ListAPIView):
 
     def get_queryset(self):
         """ Получает список привычек пользователя """
-        return Habit.objects.filter(owner=self.request.user)
+        return Habit.objects.filter(owner=self.request.user).order_by('id')
 
 
 class PublicHabitListApiView(generics.ListAPIView):

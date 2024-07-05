@@ -1,0 +1,86 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$bpdTsP2X1sJ1GVgwQML1Dw$UhUAyAcbIavvtcttnzC06MsK9naQ6684bHev/K6dUfE=",
+      "last_login": "2024-06-27T10:01:46.576Z",
+      "is_superuser": true,
+      "first_name": "Admin",
+      "last_name": "Admin",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-06-27T09:58:07.453Z",
+      "email": "admin@localhost",
+      "tg_id": null,
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$XNQcSSGqOORdB89BWqwSGb$JZ8e1lycedGmdgKS0pUp/xAf02/QzUfjiwgYRd/dWyQ=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Сергей",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-06-27T09:59:49Z",
+      "email": "maxmit83@gmail.com",
+      "tg_id": 751326448,
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$pJd4ZZCI9KCLIRaiNr9lnq$olQ+yhuja4NWx8IsE6mZoxBv+WyYiDu68R8FM6/JSvA=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Test",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-06-27T10:00:59.911Z",
+      "email": "qwerty@qwerty.com",
+      "tg_id": null,
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$O13eeG5Nr3Kiz6CsQkOO6R$iRgs1nNLuNGnPJtHnWA/PmFN/OhEs7CkGippvzRDVvs=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "Никола",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-02T15:56:21.349Z",
+      "email": "nikola@nikola.com",
+      "tg_id": null,
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

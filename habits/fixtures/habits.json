@@ -1,0 +1,162 @@
+[
+  {
+    "model": "habits.habit",
+    "pk": 2,
+    "fields": {
+      "owner": 2,
+      "place": "Ванная",
+      "time_start_habits": "08:30:00",
+      "action": "Принять душ",
+      "pleasant_habit": true,
+      "linked_habit": null,
+      "reminder_frequency_days": "wed",
+      "award": null,
+      "time_perform": "00:01:40",
+      "is_public": true
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 3,
+    "fields": {
+      "owner": 2,
+      "place": "Офис",
+      "time_start_habits": "08:00:00",
+      "action": "Упражнения головой",
+      "pleasant_habit": false,
+      "linked_habit": null,
+      "reminder_frequency_days": "wed",
+      "award": null,
+      "time_perform": "00:01:00",
+      "is_public": false
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 4,
+    "fields": {
+      "owner": 2,
+      "place": "Парк",
+      "time_start_habits": "18:16:00",
+      "action": "Пробежка",
+      "pleasant_habit": true,
+      "linked_habit": null,
+      "reminder_frequency_days": "tue",
+      "award": null,
+      "time_perform": "00:01:00",
+      "is_public": false
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 5,
+    "fields": {
+      "owner": 2,
+      "place": "Ванная",
+      "time_start_habits": "19:51:00",
+      "action": "Почистить зубы",
+      "pleasant_habit": false,
+      "linked_habit": null,
+      "reminder_frequency_days": "tue",
+      "award": null,
+      "time_perform": "00:01:00",
+      "is_public": false
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 6,
+    "fields": {
+      "owner": 2,
+      "place": "Кухня",
+      "time_start_habits": "06:00:00",
+      "action": "Выпить стакан чистой воды",
+      "pleasant_habit": false,
+      "linked_habit": null,
+      "reminder_frequency_days": "mon",
+      "award": null,
+      "time_perform": "00:01:00",
+      "is_public": false
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 7,
+    "fields": {
+      "owner": 2,
+      "place": "Парк",
+      "time_start_habits": "08:00:00",
+      "action": "Прыжки на месте",
+      "pleasant_habit": false,
+      "linked_habit": null,
+      "reminder_frequency_days": "fri",
+      "award": null,
+      "time_perform": "00:01:20",
+      "is_public": false
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 8,
+    "fields": {
+      "owner": 2,
+      "place": "Автомобиль",
+      "time_start_habits": "08:00:00",
+      "action": "Протереть зеркала",
+      "pleasant_habit": false,
+      "linked_habit": null,
+      "reminder_frequency_days": "wed",
+      "award": null,
+      "time_perform": "00:01:40",
+      "is_public": false
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 9,
+    "fields": {
+      "owner": 4,
+      "place": "Ванная",
+      "time_start_habits": "08:00:00",
+      "action": "Умывание",
+      "pleasant_habit": false,
+      "linked_habit": null,
+      "reminder_frequency_days": "mon",
+      "award": null,
+      "time_perform": "00:01:00",
+      "is_public": false
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 10,
+    "fields": {
+      "owner": 4,
+      "place": "Офис",
+      "time_start_habits": "09:15:00",
+      "action": "Прыжки на скакалке",
+      "pleasant_habit": false,
+      "linked_habit": 11,
+      "reminder_frequency_days": "thu",
+      "award": null,
+      "time_perform": "00:01:40",
+      "is_public": false
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 11,
+    "fields": {
+      "owner": 4,
+      "place": "Офис",
+      "time_start_habits": "09:00:00",
+      "action": "Выпить чашку чая мате",
+      "pleasant_habit": true,
+      "linked_habit": null,
+      "reminder_frequency_days": "fri",
+      "award": null,
+      "time_perform": "00:02:00",
+      "is_public": false
+    }
+  }
+]
