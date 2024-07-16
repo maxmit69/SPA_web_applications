@@ -2,6 +2,7 @@ from rest_framework import generics, permissions
 from habits.paginators import HabitPagination
 from habits.serializers import HabitSerializer
 from habits.models import Habit
+from django.contrib.auth.models import AnonymousUser
 
 
 class HabitListApiView(generics.ListAPIView):
@@ -36,6 +37,8 @@ class HabitUpdateApiView(generics.UpdateAPIView):
 
     def get_queryset(self):
         """ Возвращает список привычек пользователя """
+        if isinstance(self.request.user, AnonymousUser):
+            return Habit.objects.none()
         return Habit.objects.filter(owner=self.request.user)
 
 
@@ -45,4 +48,6 @@ class HabitDestroyApiView(generics.DestroyAPIView):
 
     def get_queryset(self):
         """ Возвращает список привычек пользователя """
+        if isinstance(self.request.user, AnonymousUser):
+            return Habit.objects.none()
         return Habit.objects.filter(owner=self.request.user)

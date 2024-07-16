@@ -12,7 +12,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -62,16 +62,39 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('MY_NAME'),  # Название БД
-        'USER': os.getenv('MY_USER'),  # Пользователь для подключения
-        'PASSWORD': os.getenv('MY_PASSWORD'),  # Пароль для этого пользователя
-        'HOST': os.getenv('MY_HOST'),  # Адрес, на котором развернут сервер БД
-        'PORT': os.getenv('MY_PORT'),  # Порт, на котором работает сервер БД
+IN_DOCKER = os.environ.get('IN_DOCKER', False)
+
+if IN_DOCKER:
+    # Настройки база данных docker
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.getenv('POSTGRES_DB'),
+            'USER': os.getenv('POSTGRES_USER'),
+            'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+            'HOST': os.getenv('POSTGRES_HOST'),
+            'PORT': os.getenv('POSTGRES_PORT'),
+        }
     }
-}
+    #  Настройки Celery docker
+    CELERY_BROKER_URL = os.getenv('DOCKER_CELERY_BROKER_URL')
+    CELERY_RESULT_BACKEND = os.getenv('DOCKER_CELERY_RESULT_BACKEND')
+
+else:
+    # Настройки база данных local
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.getenv('MY_NAME'),
+            'USER': os.getenv('MY_USER'),
+            'PASSWORD': os.getenv('MY_PASSWORD'),
+            'HOST': os.getenv('MY_HOST'),
+            'PORT': os.getenv('MY_PORT'),
+        }
+    }
+    #  Настройки Celery
+    CELERY_BROKER_URL = os.getenv('MY_CELERY_BROKER_URL')
+    CELERY_RESULT_BACKEND = os.getenv('MY_CELERY_RESULT_BACKEND')
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -96,7 +119,12 @@ USE_I18N = True
 
 USE_TZ = True
 
+# STATIC и MEDIA файлы
 STATIC_URL = 'static/'
+MEDIA_URL = 'media/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static',)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media',)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -105,8 +133,6 @@ AUTH_USER_MODEL = 'users.User'
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 
 #  Настройки Celery
-CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL')
-CELERY_RESULT_BACKEND = os.getenv('CELERY_RESULT_BACKEND')
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
@@ -177,3 +203,7 @@ SWAGGER_SETTINGS = {
     },
     'USE_SESSION_AUTH': False
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1:8000',
+]
